@@ -1,0 +1,15 @@
+home:
+  path: /
+  controller: App\Controller\EcommerceController::home
+
+product_detail:
+  path: /product/{id}
+  controller: App\Controller\EcommerceController::productDetail
+
+cart:
+  path: /cart
+  controller: App\Controller\EcommerceController::cart
+
+checkout:
+  path: /checkout
+  controller: App\Controller\EcommerceController::checkout

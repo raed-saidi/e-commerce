@@ -4,13 +4,16 @@
 
 {% block content %}
     <div class="product-detail">
-        <img src="{{ product.image }}" alt="{{ product.name }}">
-        <h1>{{ product.name }}</h1>
+        <img src="{{ product.image }}" alt="{{ product.name }}" class="product-image">
+        <h2>{{ product.name }}</h2>
+        <p>${{ product.price }}</p>
         <p>{{ product.description }}</p>
-        <strong>{{ product.price }} USD</strong>
-        <form action="/cart/add" method="post">
+
+        <form method="POST" action="{{ path('cart_add') }}">
             <input type="hidden" name="product_id" value="{{ product.id }}">
-            <button type="submit">Add to Cart</button>
+            <input type="hidden" name="product_name" value="{{ product.name }}">
+            <input type="hidden" name="product_price" value="{{ product.price }}">
+            <button type="submit" class="btn">Add to Cart</button>
         </form>
     </div>
 {% endblock %}

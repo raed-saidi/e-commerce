@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+    <h1>Checkout</h1>
+
+    <form action="/checkout/submit" method="post" class="checkout-form">
+        <h2>Billing Details</h2>
+        <label>
+            Full Name:
+            <input type="text" name="name" required>
+        </label>
+        <label>
+            Email:
+            <input type="email" name="email" required>
+        </label>
+        <label>
+            Address:
+            <input type="text" name="address" required>
+        </label>
+
+        <h2>Payment Info</h2>
+        <label>
+            Credit Card Number:
+            <input type="text" name="card_number" required>
+        </label>
+        <label>
+            Expiration:
+            <input type="text" name="card_expiration" placeholder="MM/YY" required>
+        </label>
+        <label>
+            CVV:
+            <input type="text" name="card_cvv" required>
+        </label>
+
+        <button type="submit" class="btn">Complete Purchase</button>
+    </form>
+{% endblock %}
