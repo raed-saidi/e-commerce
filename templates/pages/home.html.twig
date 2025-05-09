@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to My Shop{% endblock %}
+
+{% block content %}
+    <h1>Featured Products</h1>
+    <div class="product-grid">
+        {% for product in products %}
+            {% include 'components/product-card.html.twig' with { product: product } %}
+        {% endfor %}
+    </div>
+{% endblock %}
